@@ -27,9 +27,11 @@ int main()
         cout << "Can't open file." << endl;
         exit(1);
     }
-    //writer << name << " is " << age << " years old." << endl;
     writer << name << age << endl;
     writer.close();
+
+
+
 
     std::vector<char> charVec;
     std::fstream file;
@@ -46,7 +48,10 @@ int main()
 
     for (int i = 0; i < charVec.size(); i++)
     {
+        file.open("new.txt", std::ifstream::in | std:: ifstream:: app);
         cout << charVec[i] << endl;
+        //file << charVec[i] << endl;
+        file.close();
     }
 
 
